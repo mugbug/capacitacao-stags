@@ -14,7 +14,7 @@ protocol ViewDelegate: class {
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var counterLabel: UILabel!
+        @IBOutlet weak var counterLabel: UILabel!
     private var presenter: Presenter?
 
     override func viewDidLoad() {
@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         presenter = Presenter(view: self)
     }
 
-    @IBAction func didTapButton(_ sender: Any) {
-        presenter?.incrementCounter()
-    }
+        @IBAction func didTapButton(_ sender: Any) {
+            presenter?.incrementCounter()
+        }
 }
 
 extension ViewController: ViewDelegate {
