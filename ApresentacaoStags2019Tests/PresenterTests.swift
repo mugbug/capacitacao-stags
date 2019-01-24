@@ -27,16 +27,42 @@ class PresenterTests: XCTestCase {
         super.tearDown()
     }
 
-    func testIncrementCount() {
+    func testUpdateValue(){
         presenter.counter = 0
-        presenter.incrementCounter()
+        presenter.updateValue(with: 1)
 
+        XCTAssertEqual(1, presenter.counter)
         XCTAssertEqual("1", mockedViewDelegate.newValue)
+    }
+
+    func testResetCounter() {
+        presenter.counter = 5
+        presenter.resetValue()
+
+        XCTAssertEqual(0, presenter.counter)
+        XCTAssertEqual("0", mockedViewDelegate.newValue)
+    }
+
+    func testUpdateStepper(){
+        presenter.counter = 7
+        presenter.resetValue()
+
+        XCTAssertEqual(0, presenter.counter)
+        XCTAssertEqual(0.0, mockedViewDelegate.newDouble!, accuracy: 0.000001)
+
     }
 }
 
 private class ViewDelegateMock: ViewDelegate {
+    func updateWindow() {
+        
+    }
 
+    func updateStepper(with value: Double) {
+        newDouble = value
+    }
+
+    var newDouble: Double?
     var newValue: String?
 
     func updateLabel(with value: String) {

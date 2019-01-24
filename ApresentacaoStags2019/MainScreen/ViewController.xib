@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="ApresentacaoStags2019" customModuleProvider="target">
             <connections>
                 <outlet property="counterLabel" destination="MFw-vK-d1D" id="pjZ-i1-MPz"/>
+                <outlet property="stepper" destination="IrU-Io-Hb8" id="cQZ-dl-NYc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,23 +27,42 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-Dc-AmJ">
-                    <rect key="frame" x="165" y="363" width="45" height="60"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <state key="normal" title="🚀"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-9u-5Yu">
+                    <rect key="frame" x="30" y="50" width="44" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Reset"/>
                     <connections>
-                        <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="exc-uz-5if"/>
+                        <action selector="didResetButton:" destination="-1" eventType="touchUpInside" id="rM8-m6-RTk"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFw-Ol-5Bo">
+                    <rect key="frame" x="309" y="50" width="36" height="33"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <state key="normal" title="Next"/>
+                    <connections>
+                        <action selector="didNextButton:" destination="-1" eventType="touchUpInside" id="SHJ-SL-Q7L"/>
+                    </connections>
+                </button>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-Io-Hb8">
+                    <rect key="frame" x="140.5" y="341" width="94" height="29"/>
+                    <connections>
+                        <action selector="didPlusClick:" destination="-1" eventType="valueChanged" id="1Tz-2X-dKA"/>
+                    </connections>
+                </stepper>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="gG9-Dc-AmJ" firstAttribute="top" secondItem="MFw-vK-d1D" secondAttribute="bottom" constant="29.5" id="Cd1-6W-2C3"/>
-                <constraint firstItem="gG9-Dc-AmJ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ej4-h8-zcv"/>
+                <constraint firstItem="PFw-Ol-5Bo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="1Pu-uH-MGU"/>
+                <constraint firstItem="F4v-9u-5Yu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="57A-Pt-H1h"/>
+                <constraint firstItem="IrU-Io-Hb8" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5lo-or-JWx"/>
+                <constraint firstItem="IrU-Io-Hb8" firstAttribute="top" secondItem="MFw-vK-d1D" secondAttribute="bottom" constant="7.5" id="7sr-B0-lFH"/>
+                <constraint firstItem="F4v-9u-5Yu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="XnQ-Oa-GTV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PFw-Ol-5Bo" secondAttribute="trailing" constant="30" id="kUJ-4q-6gg"/>
                 <constraint firstItem="MFw-vK-d1D" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-40" id="tR5-2i-o41"/>
                 <constraint firstItem="MFw-vK-d1D" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yhv-Kh-eCs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
     </objects>
 </document>

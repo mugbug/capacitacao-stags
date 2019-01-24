@@ -17,8 +17,18 @@ class Presenter {
         self.view = view
     }
 
-    func incrementCounter() {
-        counter += 1
+    func resetValue(){
+        counter = 0
         view?.updateLabel(with: String(counter))
+        view?.updateStepper(with: Double(counter))
+    }
+
+    func updateValue(with value: Double) {
+        counter = Int(value)
+        view?.updateLabel(with: String(counter))
+    }
+
+    func nextWindow(){
+        view?.updateWindow()
     }
 }
