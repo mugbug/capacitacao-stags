@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,28 +20,58 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFw-vK-d1D">
-                    <rect key="frame" x="172" y="273.5" width="31" height="60"/>
+                    <rect key="frame" x="172" y="263.5" width="31" height="60"/>
                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-Dc-AmJ">
-                    <rect key="frame" x="165" y="363" width="45" height="60"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-Ts-OoE">
+                    <rect key="frame" x="88.5" y="343.5" width="198" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-Dc-AmJ">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="60"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="+1"/>
+                            <connections>
+                                <action selector="didTapPlusOneButton:" destination="-1" eventType="touchUpInside" id="lSv-8u-GuH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIP-pq-xRc">
+                            <rect key="frame" x="62" y="0.0" width="49" height="60"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="+5"/>
+                            <connections>
+                                <action selector="didTapPlusFiveButton:" destination="-1" eventType="touchUpInside" id="Bt7-HD-zQi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrO-95-Sdz">
+                            <rect key="frame" x="131" y="0.0" width="67" height="60"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="+10"/>
+                            <connections>
+                                <action selector="didTapPlusTenButton:" destination="-1" eventType="touchUpInside" id="taf-xQ-wJQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CheckSplitter 💸" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8d-Ad-iSF">
+                    <rect key="frame" x="45" y="100" width="285.5" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <state key="normal" title="🚀"/>
-                    <connections>
-                        <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="exc-uz-5if"/>
-                    </connections>
-                </button>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="gG9-Dc-AmJ" firstAttribute="top" secondItem="MFw-vK-d1D" secondAttribute="bottom" constant="29.5" id="Cd1-6W-2C3"/>
-                <constraint firstItem="gG9-Dc-AmJ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ej4-h8-zcv"/>
+                <constraint firstItem="sJA-Ts-OoE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="53n-GP-qPc"/>
+                <constraint firstItem="sJA-Ts-OoE" firstAttribute="top" secondItem="MFw-vK-d1D" secondAttribute="bottom" constant="20" id="5kc-Tn-uez"/>
+                <constraint firstItem="e8d-Ad-iSF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="7Mn-sS-9dm"/>
+                <constraint firstItem="e8d-Ad-iSF" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="OTj-kO-Rxi"/>
                 <constraint firstItem="MFw-vK-d1D" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-40" id="tR5-2i-o41"/>
                 <constraint firstItem="MFw-vK-d1D" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yhv-Kh-eCs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138" y="153"/>
         </view>
     </objects>
 </document>

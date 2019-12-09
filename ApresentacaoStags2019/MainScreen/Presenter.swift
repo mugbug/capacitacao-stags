@@ -17,8 +17,8 @@ class Presenter {
         self.view = view
     }
 
-    func incrementCounter() {
-        counter += 1
+    func incrementCounter(by value: Int) {
+        counter += value
         view?.updateLabel(with: String(counter))
     }
 }
