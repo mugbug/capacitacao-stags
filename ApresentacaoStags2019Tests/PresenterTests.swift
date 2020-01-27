@@ -27,9 +27,9 @@ class PresenterTests: XCTestCase {
         super.tearDown()
     }
 
-    func testIncrementCount() {
+    func testIncrementCount_byOne() {
         presenter.counter = 0
-        presenter.incrementCounter()
+        presenter.incrementCounter(by: 1)
 
         XCTAssertEqual("1", mockedViewDelegate.newValue)
     }

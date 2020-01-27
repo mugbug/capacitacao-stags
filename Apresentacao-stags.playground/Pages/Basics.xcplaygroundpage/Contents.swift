@@ -7,7 +7,7 @@ import Foundation
 var counter = 0
 type(of: counter)
 
-let presentationName = "Apresentação stags 😎 🚀"
+let presentationName: String = "Hello, Dextragiários 👩‍💻👨‍💻"
 print(presentationName)
 
 var 🍕 = "PIZZA"
@@ -20,6 +20,43 @@ func incrementCounter(by number: Int) -> Int {
 
 print(counter)
 print(incrementCounter(by: 1))
+
+
+/// Value vs reference types
+
+// struct => Value type
+// class => Reference type
+
+class Restaurant {
+    var address: String = ""
+}
+
+class Pizzeria {
+    var name: String
+
+    init(name: String) {
+        self.name = name
+    }
+}
+
+var pizzeria = Pizzeria(name: "Pizza Hut")
+var pizzeriaCopy = pizzeria
+
+pizzeria.name = "Dominos"
+print(pizzeriaCopy.name)
+
+
+/// Enums
+
+enum PizzaFlavour: String {
+    case margherita = "Margherita"
+    case pepperoni = "Pepperoni"
+    case mozzarella = "Mozzarella"
+}
+
+print(PizzaFlavour.pepperoni.rawValue)
+
+/// Unit tests
 
 import XCTest
 
